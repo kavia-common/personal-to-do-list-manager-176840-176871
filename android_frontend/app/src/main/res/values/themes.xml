@@ -1,0 +1,5 @@
+<resources>
+    <style name="Theme.TodoApp" parent="android:Theme.Material.Light.NoActionBar">
+        <!-- Compose uses its own Material3; this keeps system happy -->
+    </style>
+</resources>
