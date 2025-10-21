@@ -1,0 +1,4 @@
+{
+    "command": "./gradlew installDebug",
+    "working_directory": "/home/kavia/workspace/code-generation/personal-to-do-list-manager-176840-176871/android_frontend"
+}
