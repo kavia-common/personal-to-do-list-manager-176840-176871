@@ -1,0 +1,47 @@
+Splashscreen assets (screen_1:2)
+
+Core:
+- splashscreen-1-2.html
+- splashscreen-1-2.css
+- splashscreen-1-2.js
+
+Support styles:
+- splashscreen-1-2-reset.css
+- splashscreen-1-2-a11y.css
+- splashscreen-1-2-contrast.css
+- splashscreen-1-2-grid.css
+- splashscreen-1-2-print.css
+
+Preview & validation:
+- index.html
+- demo.html
+- asset-check.html
+- tokens-preview.html
+- ASSETS_MANIFEST.html
+
+Docs:
+- README.md
+- DEV_NOTES.md
+- VALIDATION.md
+- PIXEL_CHECKLIST.md
+
+Misc:
+- favicon.ico
+
+Images referenced (exact JSON paths under repo root):
+- /assets/figmaimages/figma_image_1_10.svg
+- /assets/figmaimages/figma_image_1_12.svg
+- /assets/figmaimages/figma_image_1_14.svg
+- /assets/figmaimages/figma_image_1_56.svg
+- /assets/figmaimages/figma_image_1_57.svg
+- /assets/figmaimages/figma_image_1_61.svg
+- /assets/figmaimages/figma_image_1_67.svg
+- /assets/figmaimages/figma_image_1_76.svg
+- /assets/figmaimages/figma_image_1_77.svg
+- /assets/figmaimages/figma_image_1_78.svg
+- /assets/figmaimages/figma_image_1_79.svg
+- /assets/figmaimages/figma_image_1_80.svg
+- /assets/figmaimages/figma_image_1_82.svg
+- /assets/figmaimages/figma_image_1_84.svg
+- /assets/figmaimages/figma_image_1_93.svg
+- /assets/figmaimages/figma_image_1_97.svg

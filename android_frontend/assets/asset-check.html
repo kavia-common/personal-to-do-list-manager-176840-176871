@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>FIGMA Asset Path Check</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <style>
+    body { font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, Helvetica, sans-serif; margin: 0; padding: 16px; background: #f9fafb; }
+    h1 { margin: 0 0 8px; font-size: 18px; }
+    .note { color: #444; margin-bottom: 12px; }
+    .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(140px, 1fr)); gap: 12px; }
+    .card { border: 1px solid #e5e7eb; border-radius: 8px; padding: 10px; background: #fff; }
+    .card img { display: block; width: 100%; height: 90px; object-fit: contain; background: #f3f4f6; border-radius: 6px; }
+    .card .path { font-size: 11px; margin-top: 6px; word-break: break-all; color: #111827; }
+    .status { font-size: 12px; margin-top: 4px; }
+    .ok { color: #065f46; }
+    .fail { color: #991b1b; }
+  </style>
+</head>
+<body>
+  <h1>FIGMA Asset Path Check</h1>
+  <div class="note">Verifies JSON-referenced image paths used by Splashscreen load correctly from /assets/figmaimages/.</div>
+  <div id="grid" class="grid" role="list"></div>
+  <script>
+    // Subset of image paths referenced in Splashscreen JSON
+    const images = [
+      "/assets/figmaimages/figma_image_1_10.svg",
+      "/assets/figmaimages/figma_image_1_12.svg",
+      "/assets/figmaimages/figma_image_1_14.svg",
+      "/assets/figmaimages/figma_image_1_56.svg",
+      "/assets/figmaimages/figma_image_1_57.svg",
+      "/assets/figmaimages/figma_image_1_61.svg",
+      "/assets/figmaimages/figma_image_1_67.svg",
+      "/assets/figmaimages/figma_image_1_76.svg",
+      "/assets/figmaimages/figma_image_1_77.svg",
+      "/assets/figmaimages/figma_image_1_78.svg",
+      "/assets/figmaimages/figma_image_1_79.svg",
+      "/assets/figmaimages/figma_image_1_80.svg",
+      "/assets/figmaimages/figma_image_1_82.svg",
+      "/assets/figmaimages/figma_image_1_84.svg",
+      "/assets/figmaimages/figma_image_1_93.svg",
+      "/assets/figmaimages/figma_image_1_97.svg"
+    ];
+    const grid = document.getElementById("grid");
+    images.forEach(path => {
+      const card = document.createElement("div");
+      card.className = "card";
+      const img = document.createElement("img");
+      img.alt = path.split("/").pop();
+      img.src = path;
+      const label = document.createElement("div");
+      label.className = "path";
+      label.textContent = path;
+      const status = document.createElement("div");
+      status.className = "status";
+      img.onload = () => { status.textContent = "OK"; status.classList.add("ok"); };
+      img.onerror = () => { status.textContent = "Failed to load"; status.classList.add("fail"); };
+      card.appendChild(img);
+      card.appendChild(label);
+      card.appendChild(status);
+      grid.appendChild(card);
+    });
+  </script>
+</body>
+</html>

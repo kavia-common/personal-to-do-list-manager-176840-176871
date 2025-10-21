@@ -1,0 +1,4 @@
+# This project uses Gradle Declarative DSL.
+# Some analyzers expect a traditional settings.gradle; see settings.gradle.dcl in this directory.
+# Modules: app, list, utilities
+# Entry: app/src/main/AndroidManifest.xml

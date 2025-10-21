@@ -1,0 +1,53 @@
+{
+  "screen": "Splashscreen (screen_1:2)",
+  "root": "personal-to-do-list-manager-176840-176871/android_frontend/assets/",
+  "core": [
+    "splashscreen-1-2.html",
+    "splashscreen-1-2.css",
+    "splashscreen-1-2.js"
+  ],
+  "supportCss": [
+    "splashscreen-1-2-reset.css",
+    "splashscreen-1-2-a11y.css",
+    "splashscreen-1-2-contrast.css",
+    "splashscreen-1-2-grid.css",
+    "splashscreen-1-2-print.css"
+  ],
+  "preview": [
+    "index.html",
+    "demo.html",
+    "asset-check.html",
+    "tokens-preview.html",
+    "ASSETS_MANIFEST.html",
+    "compare-reference.html"
+  ],
+  "docs": [
+    "README.md",
+    "DEV_NOTES.md",
+    "VALIDATION.md",
+    "PIXEL_CHECKLIST.md",
+    "SITEMAP.txt"
+  ],
+  "misc": [
+    "favicon.ico"
+  ],
+  "imagesPrefix": "/assets/figmaimages/",
+  "imagesReferenced": [
+    "figma_image_1_10.svg",
+    "figma_image_1_12.svg",
+    "figma_image_1_14.svg",
+    "figma_image_1_56.svg",
+    "figma_image_1_57.svg",
+    "figma_image_1_61.svg",
+    "figma_image_1_67.svg",
+    "figma_image_1_76.svg",
+    "figma_image_1_77.svg",
+    "figma_image_1_78.svg",
+    "figma_image_1_79.svg",
+    "figma_image_1_80.svg",
+    "figma_image_1_82.svg",
+    "figma_image_1_84.svg",
+    "figma_image_1_93.svg",
+    "figma_image_1_97.svg"
+  ]
+}

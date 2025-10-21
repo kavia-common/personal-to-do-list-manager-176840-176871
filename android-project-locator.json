@@ -1,0 +1,11 @@
+{
+  "gradle_project_root": "android_frontend",
+  "gradle_wrapper": "android_frontend/gradlew",
+  "modules": ["app", "list", "utilities"],
+  "settings_candidates": [
+    "android_frontend/settings.gradle.dcl",
+    "android_frontend/settings.gradle",
+    "android_frontend/settings.gradle.kts"
+  ],
+  "notes": "Locator to assist CI analyzers in resolving the Android project root within this workspace."
+}

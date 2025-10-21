@@ -1,0 +1,7 @@
+rootProject.name = "example-android-app"
+// Marker file for analyzers expecting a traditional Gradle settings file.
+// The actual configuration uses settings.gradle.dcl (Gradle Declarative DSL).
+// Modules:
+// include(":app")
+// include(":list")
+// include(":utilities")

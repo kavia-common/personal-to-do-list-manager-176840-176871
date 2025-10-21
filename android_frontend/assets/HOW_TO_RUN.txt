@@ -1,0 +1,18 @@
+These Splashscreen files are standalone web preview assets and are NOT part of the Android Gradle build.
+
+Preview options:
+1) Open index.html directly in a browser:
+   personal-to-do-list-manager-176840-176871/android_frontend/assets/index.html
+
+2) Open a device-framed demo:
+   personal-to-do-list-manager-176840-176871/android_frontend/assets/demo.html
+
+3) Validate assets and compare with the provided PNG:
+   - asset-check.html (verifies /assets/figmaimages/... paths)
+   - compare-reference.html (side-by-side with attachments/screen_1-2.png)
+
+Notes:
+- Image paths use exact JSON references (e.g., /assets/figmaimages/figma_image_1_10.svg); do not rename or move images.
+- These assets do not affect Android builds. For Gradle tasks, run from:
+  personal-to-do-list-manager-176840-176871/android_frontend
+- If a CI analyzer reports it cannot find the Android project root, configure CI to use the Android project directory above (Gradle DCL).

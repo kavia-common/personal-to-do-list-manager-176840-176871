@@ -1,0 +1,4 @@
+# Sentinel file for analyzers: this is the Gradle project root (android_frontend).
+# Wrapper: ./gradlew
+# Settings: settings.gradle.dcl (primary), settings.gradle/settings.gradle.kts (compat)
+# Modules: :app, :list, :utilities

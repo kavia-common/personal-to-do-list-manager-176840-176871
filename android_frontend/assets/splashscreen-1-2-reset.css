@@ -1,0 +1,13 @@
+/* Minimal reset for consistent rendering */
+* { box-sizing: border-box; }
+html, body, h1, p, button { margin: 0; padding: 0; }
+img { border: 0; }
+
+/* Optional: define a consistent font stack to match system UI metrics */
+@font-face {
+  font-family: "SystemUIStack";
+  src: local(-apple-system), local(BlinkMacSystemFont), local("Segoe UI"), local(Roboto), local("Helvetica Neue"), local(Arial);
+  font-weight: 100 900;
+  font-style: normal;
+  font-display: swap;
+}

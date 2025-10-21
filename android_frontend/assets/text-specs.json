@@ -1,0 +1,36 @@
+{
+  "canvas": { "width": 430, "height": 932, "background": "#F0F4F3" },
+  "statusbar": {
+    "frame": { "width": 380, "height": 22, "top": 16, "left": 25 },
+    "time": { "text": "9:30 PM", "fontSize": 14, "fontWeight": 600 }
+  },
+  "headline": {
+    "text": "Gets things with TODs",
+    "width": 201,
+    "height": 27,
+    "top": 540,
+    "leftCenter": true,
+    "fontSize": 22,
+    "fontWeight": 700,
+    "color": "#111827"
+  },
+  "body": {
+    "text": "Lorem ipsum dolor sit amet consectetur. Eget sit nec et euismod. Consequat urna quam felis interdum quisque. Malesuada adipiscing tristique ut eget sed.",
+    "width": 203,
+    "height": 100,
+    "top": 582,
+    "leftCenter": true,
+    "fontSize": 12.5,
+    "lineHeight": 20,
+    "color": "#444444"
+  },
+  "button": {
+    "text": "Get Started",
+    "frame": { "width": 380, "height": 60, "top": 699, "left": 25 },
+    "radius": 12,
+    "bg": "#50C2C9",
+    "textColor": "#FFFFFF",
+    "fontSize": 18,
+    "fontWeight": 700
+  }
+}

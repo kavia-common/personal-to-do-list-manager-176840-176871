@@ -1,0 +1,12 @@
+{
+  "name": "example-android-app",
+  "modules": [":app", ":list", ":utilities"],
+  "gradle": {
+    "wrapper": true,
+    "declarativeDsl": true,
+    "compatibilityFiles": {
+      "settings.gradle": true,
+      "build.gradle": true
+    }
+  }
+}

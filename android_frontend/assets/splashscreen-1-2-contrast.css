@@ -1,0 +1,14 @@
+/* High-contrast validation theme (optional) */
+:root.high-contrast {
+  --bg: #ffffff;
+  --text-dark: #000000;
+  --text: #000000;
+  --button-bg: #000000;
+  --button-text: #ffffff;
+}
+
+:root.high-contrast body { background: var(--bg); }
+:root.high-contrast #splash-root { background: var(--bg); }
+:root.high-contrast .headline,
+:root.high-contrast .subtitle { color: var(--text); }
+:root.high-contrast .cta { background: var(--button-bg); color: var(--button-text); box-shadow: none; }

@@ -1,0 +1,24 @@
+buildscript {
+    repositories {
+        google()
+        mavenCentral()
+        gradlePluginPortal()
+    }
+    dependencies {
+        // Keep empty; real configuration is in settings.gradle.dcl and module .dcl files
+    }
+}
+
+allprojects {
+    repositories {
+        google()
+        mavenCentral()
+    }
+}
+
+// Marker task for analyzers
+tasks.register("printProjectInfo") {
+    doLast {
+        println("Android project root detected. Modules: :app, :list, :utilities")
+    }
+}

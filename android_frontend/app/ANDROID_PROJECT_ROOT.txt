@@ -1,0 +1,10 @@
+Gradle root for this Android project is the parent directory:
+../
+
+Use the wrapper from there:
+../gradlew
+
+Primary settings file (DCL):
+../settings.gradle.dcl
+
+This file is provided to assist analyzers that traverse from module to root.

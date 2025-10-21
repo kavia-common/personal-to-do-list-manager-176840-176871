@@ -1,0 +1,11 @@
+Android Project Root
+
+This directory (personal-to-do-list-manager-176840-176871/android_frontend) is the root of the Android/Kotlin project.
+
+Contains:
+- gradlew / gradlew.bat
+- gradle/wrapper/gradle-wrapper.properties
+- settings.gradle.dcl (primary)
+- settings.gradle (compatibility)
+- build.gradle (compatibility)
+- Modules: app, list, utilities

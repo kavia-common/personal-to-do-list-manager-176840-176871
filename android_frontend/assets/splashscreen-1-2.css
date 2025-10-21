@@ -1,0 +1,188 @@
+:root {
+  /* Colors inferred from JSON references */
+  --bg: #F0F4F3; /* color_f0f4f3 */
+  --text-dark: #000000;
+  --text: #111827;
+  --primary: #50C2C9; /* used in some icons - not for text */
+  --button-bg: #2E8F95; /* approximate style_11 fill; if defined elsewhere adjust */
+  --button-text: #FFFFFF;
+}
+
+/* Root canvas fixed to design size (430x932) */
+html, body {
+  margin: 0;
+  padding: 0;
+  background: var(--bg);
+}
+#splash-root {
+  position: relative;
+  width: 430px;
+  height: 932px;
+  margin: 0 auto;
+  background: var(--bg);
+  overflow: hidden;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, "Noto Sans", "Helvetica Neue", sans-serif;
+  color: var(--text-dark);
+}
+
+/* Top ellipse shapes - based on JSON 'shape' component with two ellipses */
+.shape-ellipses {
+  position: absolute;
+  left: 0; top: 0;
+  width: 430px; height: 300px;
+  pointer-events: none;
+}
+.shape-ellipses .ellipse {
+  position: absolute;
+  border-radius: 50%;
+  background: #CFE9E8; /* soft teal tone to match design accent; JSON references style_1 */
+  opacity: 0.5;
+}
+.shape-ellipses .ellipse-1 {
+  /* Ellipse 1: at x:-315,y:-483 in frame coords; align to top-left outside */
+  width: 200px; height: 200px;
+  left: -100px; top: -40px; /* visually placed similar to screenshot */
+}
+.shape-ellipses .ellipse-2 {
+  width: 200px; height: 200px;
+  left: 0px; top: -110px; /* offset per JSON (-215,-553) vs frame; tuned to preview */
+}
+
+/* Status bar (notification) */
+.statusbar {
+  position: absolute;
+  /* JSON notification frame at x:-190,y:-445 with width 380 height 22 relative to center.
+     In absolute page coordinates, set top padding accordingly */
+  left: 25px; /* center 430 => (430-380)/2 */
+  top: 16px;
+  width: 380px;
+  height: 22px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.status-left-time {
+  font-size: 14px; /* approximate 'typo_9' */
+  font-weight: 600;
+  line-height: 22px;
+  color: #000;
+}
+.status-icons {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+}
+.status-icons .icon {
+  display: block;
+}
+.status-icons .wifi {
+  width: 21.19px; height: 14.83px;
+}
+.status-icons .signal {
+  width: 19.6px; height: 16.95px;
+}
+.status-icons .battery {
+  width: 21.19px; height: 10.6px;
+}
+
+/* Illustration container (undraw...) JSON dims: x:-133, y:-205, width:254, height:193.998 */
+.illustration {
+  position: absolute;
+  left: calc(50% - 127px); /* center 254px */
+  top: 260px; /* visual alignment per screenshot/JSON y=-205 translates near upper mid */
+  width: 254px;
+  height: 194px;
+}
+.illustration .vec {
+  position: absolute;
+  display: block;
+  pointer-events: none;
+}
+/* Place a subset of key vectors by their JSON coordinates relative to the illustration frame.
+   Note: Many JSON vectors lack imagePath; only placed those with imagePath. */
+.v-1-56 { left: 23px; top: 165px; width: 19.52px; height: 29.48px; }
+.v-1-57 { left: 23.34px; top: 166px; width: 16.39px; height: 28.91px; }
+.v-1-61 { left: 17px; top: 151px; width: 13.96px; height: 33.08px; }
+.v-1-67 { left: 6px; top: 166.3px; width: 17.25px; height: 28.41px; }
+.v-1-76 { left: 47px; top: 100px; width: 23.59px; height: 51.86px; }
+.v-1-77 { left: 47px; top: 36px; width: 15.37px; height: 15.37px; }
+.v-1-78 { left: 42px; top: 54px; width: 28.30px; height: 52.37px; }
+.v-1-79 { left: 39px; top: 59px; width: 12.56px; height: 16.34px; }
+.v-1-80 { left: 61px; top: 68px; width: 9.99px; height: 35.06px; }
+.v-1-82 { left: 45px; top: 33px; width: 18.04px; height: 18.20px; }
+.v-1-84 { left: 116px; top: 41px; width: 31.60px; height: 17.84px; }
+.v-1-93 { left: 160px; top: -0.5px; width: 48.50px; height: 45.94px; }
+.v-1-97 { left: 129px; top: 28px; width: 14.39px; height: 14.39px; }
+
+/* Headline and subtitle per JSON text frames */
+.headline {
+  position: absolute;
+  left: calc(50% - 100.5px); /* width 201 */
+  top: 54px + 466px; /* JSON y:54; design root is top-left; this compensates baseline */
+  top: 540px; /* tuned to match visual from PNG */
+  width: 201px;
+  height: 27px;
+  margin: 0;
+  font-size: 22px; /* typo_10 approximation */
+  font-weight: 700;
+  line-height: 27px;
+  text-align: center;
+  color: var(--text);
+}
+.subtitle {
+  position: absolute;
+  left: calc(50% - 101.5px); /* width 203 */
+  top: 582px; /* JSON y:97; tuned for visual alignment */
+  width: 203px;
+  height: 100px;
+  margin: 0;
+  font-size: 12.5px; /* typo_11 approximation */
+  line-height: 20px;
+  text-align: center;
+  color: #444;
+}
+
+/* CTA button (JSON: x:-192,y:333,width:380,height:60) */
+.cta {
+  position: absolute;
+  left: 25px; /* (430-380)/2 */
+  top: 699px; /* tuned from JSON y:333 baseline to final canvas */
+  width: 380px;
+  height: 60px;
+  border: none;
+  border-radius: 12px; /* inferred; JSON style_11 had rectangle rounding */
+  background: #50C2C9; /* style_11 likely turquoise/primary */
+  color: var(--button-text);
+  font-size: 18px;
+  font-weight: 700;
+  cursor: pointer;
+  box-shadow: 0 6px 16px rgba(0,0,0,0.08);
+}
+.cta:focus {
+  outline: 2px solid #0d7e86;
+  outline-offset: 2px;
+}
+.cta-label {
+  position: absolute;
+  left: calc(50% - 52px);
+  top: 16px;
+  height: 28px;
+  line-height: 28px;
+}
+
+/* Simple fade-in animation targets (logo/illustration) */
+.fade-in {
+  opacity: 0;
+  transform: translateY(8px);
+  animation: fadeInUp 700ms ease-out forwards;
+}
+.fade-in.delay-1 { animation-delay: 150ms; }
+.fade-in.delay-2 { animation-delay: 300ms; }
+.fade-in.delay-3 { animation-delay: 450ms; }
+
+@keyframes fadeInUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

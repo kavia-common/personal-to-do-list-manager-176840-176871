@@ -1,0 +1,16 @@
+{
+  "type": "android-gradle",
+  "root": ".",
+  "wrapper": "./gradlew",
+  "settings": [
+    "settings.gradle.dcl",
+    "settings.gradle",
+    "settings.gradle.kts"
+  ],
+  "modules": [
+    "app",
+    "list",
+    "utilities"
+  ],
+  "notes": "Primary settings file uses Gradle Declarative DSL (.dcl); Groovy/Kotlin shims are present for analyzers."
+}

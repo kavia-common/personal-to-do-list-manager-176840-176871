@@ -1,1 +1,7 @@
-.env
+# Android/Gradle typical ignores
+/.gradle/
+/build/
+/local.properties
+/.idea/
+/.cxx/
+*.iml

@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Splashscreen</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="icon" href="./favicon.ico" />
+  <link rel="preload" href="./splashscreen-1-2-reset.css" as="style" />
+  <link rel="stylesheet" href="./splashscreen-1-2-reset.css" />
+  <link rel="stylesheet" href="./splashscreen-1-2-print.css" media="print" />
+  <link rel="preload" href="./splashscreen-1-2.css" as="style" />
+  <link rel="stylesheet" href="./splashscreen-1-2.css" />
+  <link rel="preload" href="./splashscreen-1-2-a11y.css" as="style" />
+  <link rel="stylesheet" href="./splashscreen-1-2-a11y.css" />
+</head>
+<body>
+  <p id="splash-desc" class="sr-only">Welcome splash screen with status icons, illustration, heading, description, and a Get Started button.</p>
+  <!-- Root frame sized exactly to 430x932 with background color -->
+  <!-- Tip: when opening via file:// ensure this HTML resides under android_frontend/assets so /assets/... paths map correctly -->
+  <main id="splash-root" role="main" aria-label="Splashscreen" aria-describedby="splash-desc">
+
+    <!-- Top background ellipse shapes (from JSON: component 'shape' with two ellipses) -->
+    <div class="shape-ellipses" aria-hidden="true">
+      <div class="ellipse ellipse-1"></div>
+      <div class="ellipse ellipse-2"></div>
+    </div>
+
+    <!-- Status bar (notification) -->
+    <div class="statusbar" aria-label="Status bar">
+      <div class="status-left-time" aria-live="polite">9:30 PM</div>
+      <div class="status-icons">
+        <img class="icon wifi" src="/assets/figmaimages/figma_image_1_10.svg" alt="WiFi signal" />
+        <img class="icon signal" src="/assets/figmaimages/figma_image_1_14.svg" alt="Signal strength" />
+        <img class="icon battery" src="/assets/figmaimages/figma_image_1_12.svg" alt="Battery status" />
+      </div>
+    </div>
+
+    <!-- Illustration group (undraw_done_checking...) -->
+    <section class="illustration" aria-label="Illustration">
+      <!-- Place layered SVGs exactly as referenced in JSON -->
+      <img src="/assets/figmaimages/figma_image_1_56.svg" alt="" class="vec v-1-56" />
+      <img src="/assets/figmaimages/figma_image_1_57.svg" alt="" class="vec v-1-57" />
+      <img src="/assets/figmaimages/figma_image_1_61.svg" alt="" class="vec v-1-61" />
+      <img src="/assets/figmaimages/figma_image_1_67.svg" alt="" class="vec v-1-67" />
+      <img src="/assets/figmaimages/figma_image_1_76.svg" alt="" class="vec v-1-76" />
+      <img src="/assets/figmaimages/figma_image_1_77.svg" alt="" class="vec v-1-77" />
+      <img src="/assets/figmaimages/figma_image_1_78.svg" alt="" class="vec v-1-78" />
+      <img src="/assets/figmaimages/figma_image_1_79.svg" alt="" class="vec v-1-79" />
+      <img src="/assets/figmaimages/figma_image_1_80.svg" alt="" class="vec v-1-80" />
+      <img src="/assets/figmaimages/figma_image_1_82.svg" alt="" class="vec v-1-82" />
+      <img src="/assets/figmaimages/figma_image_1_84.svg" alt="" class="vec v-1-84" />
+      <img src="/assets/figmaimages/figma_image_1_93.svg" alt="" class="vec v-1-93" />
+      <img src="/assets/figmaimages/figma_image_1_97.svg" alt="" class="vec v-1-97" />
+      <!-- Many JSON vector nodes are non-image path; omitted as they have no imagePath -->
+    </section>
+
+    <!-- Headline and body text -->
+    <h1 class="headline">Gets things with TODs</h1>
+    <p class="subtitle">
+      Lorem ipsum dolor sit amet consectetur. Eget sit nec et euismod. Consequat urna quam felis interdum quisque. Malesuada adipiscing tristique ut eget sed.
+    </p>
+
+    <!-- Primary CTA button -->
+    <button type="button" class="cta" aria-label="Get Started">
+      <span class="cta-label">Get Started</span>
+    </button>
+  </main>
+
+  <link rel="preload" href="./splashscreen-1-2-contrast.css" as="style" />
+  <link rel="stylesheet" href="./splashscreen-1-2-contrast.css" />
+  <link rel="preload" href="./splashscreen-1-2-grid.css" as="style" />
+  <link rel="stylesheet" href="./splashscreen-1-2-grid.css" />
+  <script src="./splashscreen-1-2.js"></script>
+  <script>
+    // Optional: High-contrast toggle for visual validation; non-blocking and unobtrusive.
+    (function () {
+      const btn = document.createElement('button');
+      btn.textContent = 'HC';
+      btn.title = 'Toggle high-contrast';
+      Object.assign(btn.style, {
+        position: 'fixed', right: '8px', bottom: '8px',
+        padding: '6px 8px', fontSize: '12px', borderRadius: '6px',
+        border: '1px solid #ccc', background: '#fff', color: '#111',
+        cursor: 'pointer', zIndex: 9999, opacity: '0.6'
+      });
+      btn.addEventListener('mouseenter', () => btn.style.opacity = '1');
+      btn.addEventListener('mouseleave', () => btn.style.opacity = '0.6');
+      btn.addEventListener('click', () => {
+        const root = document.documentElement;
+        const on = root.classList.toggle('high-contrast');
+        btn.setAttribute('aria-pressed', on ? 'true' : 'false');
+      });
+      document.body.appendChild(btn);
+
+      const gridBtn = document.createElement('button');
+      gridBtn.textContent = 'GRID';
+      gridBtn.title = 'Toggle pixel grid';
+      Object.assign(gridBtn.style, {
+        position: 'fixed', right: '44px', bottom: '8px',
+        padding: '6px 8px', fontSize: '12px', borderRadius: '6px',
+        border: '1px solid #ccc', background: '#fff', color: '#111',
+        cursor: 'pointer', zIndex: 9999, opacity: '0.6'
+      });
+      gridBtn.addEventListener('mouseenter', () => gridBtn.style.opacity = '1');
+      gridBtn.addEventListener('mouseleave', () => gridBtn.style.opacity = '0.6');
+      gridBtn.addEventListener('click', () => {
+        const root = document.getElementById('splash-root');
+        if (!root) return;
+        root.classList.toggle('grid');
+      });
+      document.body.appendChild(gridBtn);
+    })();
+  </script>
+</body>
+</html>

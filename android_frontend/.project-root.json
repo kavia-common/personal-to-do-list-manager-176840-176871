@@ -1,0 +1,15 @@
+{
+  "projectType": "android",
+  "gradleWrapper": "./gradlew",
+  "settingsFiles": [
+    "settings.gradle.dcl",
+    "settings.gradle",
+    "settings.gradle.kts"
+  ],
+  "modules": [
+    "app",
+    "list",
+    "utilities"
+  ],
+  "notes": "This is the Android project root. Uses Gradle Declarative DSL with compatibility shims."
+}

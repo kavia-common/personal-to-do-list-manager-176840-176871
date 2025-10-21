@@ -1,0 +1,18 @@
+/* Print styles for Splashscreen review */
+@media print {
+  html, body {
+    margin: 0 !important;
+    padding: 0 !important;
+    background: #ffffff !important;
+  }
+  #splash-root {
+    width: 430px !important;
+    height: 932px !important;
+    margin: 0 !important;
+    box-shadow: none !important;
+    background: #ffffff !important;
+  }
+  .fade-in { opacity: 1 !important; transform: none !important; animation: none !important; }
+  /* Hide validation controls if visible */
+  button[title="Toggle high-contrast"] { display: none !important; }
+}

@@ -1,0 +1,5 @@
+{
+  "root": "./android_frontend",
+  "wrapper": "./android_frontend/gradlew",
+  "modules": [ "app", "list", "utilities" ]
+}

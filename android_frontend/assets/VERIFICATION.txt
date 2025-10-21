@@ -1,0 +1,18 @@
+Splashscreen assets usage:
+
+1) Open splashscreen-1-2.html in a browser to verify the pixel-perfect layout:
+   Path: personal-to-do-list-manager-176840-176871/android_frontend/assets/splashscreen-1-2.html
+
+2) All images are referenced via exact JSON paths under /assets/figmaimages/.
+   Example: /assets/figmaimages/figma_image_1_10.svg
+
+3) CSS and JS are linked relatively in the same folder:
+   - splashscreen-1-2.css
+   - splashscreen-1-2.js
+
+4) These files are static and do not participate in the Android Gradle build.
+
+5) If an automated analyzer cannot detect the Gradle project root, run builds using:
+   - bash personal-to-do-list-manager-176840-176871/run-android-gradle.sh :app:assembleDebug
+   or change directory:
+   - cd personal-to-do-list-manager-176840-176871/android_frontend && ./gradlew :app:assembleDebug

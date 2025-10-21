@@ -1,0 +1,4 @@
+This directory is the Android Gradle project root.
+Gradle wrapper: ./gradlew
+Primary settings: settings.gradle.dcl (with DCL), compatibility shims: settings.gradle / settings.gradle.kts
+Modules: :app, :list, :utilities

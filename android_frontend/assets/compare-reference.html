@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Splashscreen vs Reference Comparison</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <style>
+    :root { --w: 430px; --h: 932px; }
+    html, body { margin: 0; padding: 0; font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, Helvetica, sans-serif; background: #fff; color: #111; }
+    .wrap { max-width: 1000px; margin: 24px auto; padding: 16px; }
+    h1 { margin: 0 0 12px; font-size: 18px; }
+    .controls { margin-bottom: 12px; display: flex; gap: 8px; align-items: center; }
+    .controls input[type="range"] { width: 240px; }
+    .grid { display: grid; grid-template-columns: var(--w) var(--w); gap: 16px; align-items: start; }
+    .panel { position: relative; width: var(--w); height: var(--h); border: 1px solid #e5e7eb; border-radius: 8px; overflow: hidden; background: #F0F4F3; }
+    iframe, img { width: 100%; height: 100%; display: block; border: 0; }
+    .overlay { position: absolute; inset: 0; opacity: 0.5; pointer-events: none; }
+    .note { margin-top: 10px; color: #444; font-size: 13px; }
+    .label { font-size: 12px; color: #555; }
+    .toggle { padding: 6px 10px; border: 1px solid #ccc; border-radius: 6px; background: #fff; cursor: pointer; }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <h1>Compare: Rendered Splashscreen vs Reference</h1>
+    <div class="controls">
+      <button id="toggleOverlay" class="toggle" aria-pressed="false">Toggle overlay</button>
+      <span class="label">Overlay opacity</span>
+      <input id="opacity" type="range" min="0" max="100" value="50" />
+      <span id="ovValue" class="label">50%</span>
+    </div>
+    <div class="grid">
+      <div class="panel" aria-label="Rendered splashscreen">
+        <iframe src="./splashscreen-1-2.html" title="Rendered Splashscreen"></iframe>
+        <img id="renderOverlay" class="overlay" src="../../../../attachments/screen_1-2.png" alt="Reference overlay" style="display:none" />
+      </div>
+      <div class="panel" aria-label="Reference image">
+        <img src="../../../../attachments/screen_1-2.png" alt="Reference PNG" />
+      </div>
+    </div>
+    <div class="note">Note: The left panel loads the rendered HTML; the right panel shows the provided reference PNG. Use the overlay to align pixels.</div>
+  </div>
+  <script>
+    const btn = document.getElementById('toggleOverlay');
+    const overlay = document.getElementById('renderOverlay');
+    const slider = document.getElementById('opacity');
+    const ovValue = document.getElementById('ovValue');
+    btn.addEventListener('click', () => {
+      const on = overlay.style.display !== 'none';
+      overlay.style.display = on ? 'none' : 'block';
+      btn.setAttribute('aria-pressed', (!on).toString());
+    });
+    slider.addEventListener('input', () => {
+      const v = Number(slider.value) / 100;
+      overlay.style.opacity = v.toString();
+      ovValue.textContent = `${slider.value}%`;
+    });
+  </script>
+</body>
+</html>
